@@ -1,6 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  devtools: { enabled: true },
+  devtools: { enabled: process.env.DEVTOOLS_ENABLED },
+  ssr: true,
+  nitro: {
+    externals: {
+      traceOptions: { base: process.cwd() }
+    }
+  },
   css: [
     '@/assets/css/styles.css'
   ],
@@ -34,7 +40,8 @@ export default defineNuxtConfig({
     preference: 'light'
   },
   image: {
-    dir: 'assets/images',
-    // domains: [process.env.DOMAIN_FOR_IMAGES_URL]
+    provider: "ipx",
+    dir: 'public/',
+    domains: [process.env.DOMAIN_FOR_IMAGES_URL]
   }
 })

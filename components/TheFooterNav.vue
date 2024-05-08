@@ -9,7 +9,7 @@ const filteredItems = items.value.filter(el => el.name !== "Strona główna")
   <nav v-cloak class="w-screen -mx-16 px-16 py-6 ">
     <UContainer class="flex items-center justify-between">
       <NuxtLink to="/">
-        <img width="109" height="64" src="/assets/images/butem-logo-inversed.png" alt="Logo witryny">
+        <img width="109" height="64" src="public/images/butem-logo-inversed.png" alt="Logo witryny">
       </NuxtLink>
 
       <div v-for="item in filteredItems" :key="item.name">
