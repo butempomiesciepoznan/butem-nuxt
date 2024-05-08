@@ -9,7 +9,7 @@ const filteredItems = items.value.filter(el => el.name !== "Strona główna")
   <nav v-cloak class="w-full fixed top-0 left-0 right-0 z-[100] px-16 py-6">
     <UContainer class="flex items-center justify-between">
       <NuxtLink to="/">
-        <img width="109" height="64" src="/assets/images/butem-logo.png" alt="Logo witryny">
+        <img width="109" height="64" src="public/images/butem-logo.png" alt="Logo witryny">
       </NuxtLink>
       <ul class="flex items-center gap-x-16">
 
@@ -43,14 +43,14 @@ nav {
 }
 
 .cityblocks-icon {
-  background-image: url('/assets/images/menu-logo-city-block.png');
+  background-image: url('public/images/menu-logo-city-block.png');
 }
 
 .routes-icon {
-  background-image: url('/assets/images/menu-logo-route.png');
+  background-image: url('public/images/menu-logo-route.png');
 }
 
 .help-icon {
-  background-image: url('/assets/images/menu-logo-help.png');
+  background-image: url('public/images/menu-logo-help.png');
 }
 </style>

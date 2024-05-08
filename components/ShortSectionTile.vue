@@ -16,7 +16,7 @@ const props = defineProps({
   <div v-else
     class="relative flex flex-col justify-center items-center h-[365px] w-full max-w-[304px] tile__wrapper--default">
     <h3 class="max-w-[220px] py-6 font-bold text-3xl text-center">Kolejne miasto już niebawem</h3>
-    <NuxtPicture format="webp" src="landing/klepsydra.png"></NuxtPicture>
+    <NuxtPicture format="webp" src="images/landing/klepsydra.png"></NuxtPicture>
   </div>
 </template>
 

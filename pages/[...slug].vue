@@ -21,7 +21,9 @@ const { data: pages, pending, error, refresh } = await useFetch(`${config.public
 
 </script>
 <template>
-  <div v-for="page in pages" :key="page.slug">
-    <Header :title="page.title.rendered" :content="page.content.rendered" />
-  </div>
+  <UContainer>
+    <div v-for="page in pages" :key="page.slug">
+      <Header :title="page.title.rendered" :content="page.content.rendered" />
+    </div>
+  </UContainer>
 </template>
