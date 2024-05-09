@@ -19,5 +19,11 @@
   },
   "devDependencies": {
     "@nuxtjs/google-fonts": "^3.2.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "rollup": "npm:@rollup/wasm-node",
+      "sharp": "0.26.3"
+    }
   }
 }
