@@ -15,7 +15,8 @@
     "@nuxt/ui": "^2.14.2",
     "nuxt": "^3.10.2",
     "vue": "^3.4.19",
-    "vue-router": "^4.2.5"
+    "vue-router": "^4.2.5",
+    "vuetify-nuxt-module": "^0.14.1"
   },
   "devDependencies": {
     "@nuxtjs/google-fonts": "^3.2.0"
@@ -25,5 +26,6 @@
       "rollup": "npm:@rollup/wasm-node",
       "sharp": "0.26.3"
     }
-  }
+  },
+  "packageManager": "pnpm@8.14.1+sha1.d039b38e0b20ad012ed548e44267b8d4c88b447a"
 }
