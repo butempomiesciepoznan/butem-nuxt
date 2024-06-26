@@ -4,6 +4,7 @@ const config = useRuntimeConfig()
 
 </script>
 <template>
+  <Subheading name="Trasy"/>
   <div class="w-screen h-[430px] -mt-1 -mx-16">
     <NuxtPicture format="webp" src="images/landing/pexels-jakub-zerdzicki-19736144.jpg"
       :imgAttrs="{ class: 'w-screen h-full image__size--full' }" />
