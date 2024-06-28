@@ -4,7 +4,6 @@ const config = useRuntimeConfig()
 
 </script>
 <template>
-  <Subheading name="Trasy"/>
   <div class="w-screen h-[430px] -mt-1 -mx-16">
     <NuxtPicture format="webp" src="images/landing/pexels-jakub-zerdzicki-19736144.jpg"
       :imgAttrs="{ class: 'w-screen h-full image__size--full' }" />
@@ -33,6 +32,7 @@ const config = useRuntimeConfig()
         <ShortSectionTile imageSrc="images/landing/mini-kantor-antoniego.png" title="Kantor Antoniego Krzyżanowskiego" />
       </div>
     </section>
+    <Subheading name="Trasy"/>
 
     <section class="mb-[80px]">
       <h2 class="w-full mt-32 mb-16 font-bold text-4xl">Podążaj trasą</h2>
