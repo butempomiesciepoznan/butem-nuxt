@@ -32,7 +32,6 @@ const config = useRuntimeConfig()
         <ShortSectionTile imageSrc="images/landing/mini-kantor-antoniego.png" title="Kantor Antoniego Krzyżanowskiego" />
       </div>
     </section>
-    <Subheading name="Trasy"/>
 
     <section class="mb-[80px]">
       <h2 class="w-full mt-32 mb-16 font-bold text-4xl">Podążaj trasą</h2>
