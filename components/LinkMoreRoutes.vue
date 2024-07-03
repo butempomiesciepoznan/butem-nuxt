@@ -10,7 +10,7 @@ const props = defineProps({
   },
   rel: {
     type: String,
-    default: 'noopener noreferrer'
+    default: 'noopener'
   }
 });
 </script>
