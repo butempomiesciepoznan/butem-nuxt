@@ -24,8 +24,8 @@ const props = defineProps({
 <style scoped>
 .v-btn {
   background: var(--grey-backgroud);
-  letter-spacing: 0.1px;
-  line-height: 20px;
+  letter-spacing: var(--button-letter-spacing);
+  line-height: var(--button-line-height);
   font-weight: 600;
 }
 </style>
