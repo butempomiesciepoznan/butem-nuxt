@@ -14,7 +14,9 @@ const config = useRuntimeConfig()
 
   <UContainer>
     <section>
+    
       <h2 class="w-full mt-32 mb-16 font-bold text-4xl">Zwiedzaj miasto</h2>
+      <TagMainPage/>
       <div class="flex justify-between gap-x-8 section__wrapper">
         <ShortSectionTile imageSrc="images/landing/mini-poznan.png" title="Poznań" />
         <ShortSectionTile imageSrc="" title="" defaultTile />
