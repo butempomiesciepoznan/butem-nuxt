@@ -1,24 +1,30 @@
 <script setup>
-const route = useRoute()
-const config = useRuntimeConfig()
-
+const route = useRoute();
+const config = useRuntimeConfig();
 </script>
 <template>
   <div class="w-screen h-[430px] -mt-1 -mx-16">
-    <NuxtPicture format="webp" src="images/landing/pexels-jakub-zerdzicki-19736144.jpg"
-      :imgAttrs="{ class: 'w-screen h-full image__size--full' }" />
+    <NuxtPicture
+      format="webp"
+      src="images/landing/pexels-jakub-zerdzicki-19736144.jpg"
+      :imgAttrs="{ class: 'w-screen h-full image__size--full' }"
+    />
     <UContainer class="relative">
-      <h1 class="absolute bottom-5 left-0 header__header--one">Eksploruj skarby miasta</h1>
+      <h1 class="absolute bottom-5 left-0 header__header--one">
+        Eksploruj skarby miasta
+      </h1>
     </UContainer>
   </div>
 
   <UContainer>
     <section>
-    
+      <TagMainPage />
       <h2 class="w-full mt-32 mb-16 font-bold text-4xl">Zwiedzaj miasto</h2>
-      <TagMainPage/>
       <div class="flex justify-between gap-x-8 section__wrapper">
-        <ShortSectionTile imageSrc="images/landing/mini-poznan.png" title="Poznań" />
+        <ShortSectionTile
+          imageSrc="images/landing/mini-poznan.png"
+          title="Poznań"
+        />
         <ShortSectionTile imageSrc="" title="" defaultTile />
         <ShortSectionTile imageSrc="" title="" defaultTile />
         <ShortSectionTile imageSrc="" title="" defaultTile />
@@ -26,20 +32,40 @@ const config = useRuntimeConfig()
     </section>
 
     <section>
-      <h2 class="w-full mt-32 mb-16 font-bold text-4xl">Zobacz najpopularniejsze atrakcje</h2>
+      <h2 class="w-full mt-32 mb-16 font-bold text-4xl">
+        Zobacz najpopularniejsze atrakcje
+      </h2>
       <div class="flex justify-between gap-x-8 section__wrapper">
-        <ShortSectionTile imageSrc='images/landing/mini-domki-budnicze.png' title="Domki budnicze" />
-        <ShortSectionTile imageSrc="images/landing/mini-ratusz-poznanski.png" title="Ratusz Poznański" />
-        <ShortSectionTile imageSrc="images/landing/mini-katedra-poznanska.png" title="Katedra Poznańska" />
-        <ShortSectionTile imageSrc="images/landing/mini-kantor-antoniego.png" title="Kantor Antoniego Krzyżanowskiego" />
+        <ShortSectionTile
+          imageSrc="images/landing/mini-domki-budnicze.png"
+          title="Domki budnicze"
+        />
+        <ShortSectionTile
+          imageSrc="images/landing/mini-ratusz-poznanski.png"
+          title="Ratusz Poznański"
+        />
+        <ShortSectionTile
+          imageSrc="images/landing/mini-katedra-poznanska.png"
+          title="Katedra Poznańska"
+        />
+        <ShortSectionTile
+          imageSrc="images/landing/mini-kantor-antoniego.png"
+          title="Kantor Antoniego Krzyżanowskiego"
+        />
       </div>
     </section>
 
     <section class="mb-[80px]">
       <h2 class="w-full mt-32 mb-16 font-bold text-4xl">Podążaj trasą</h2>
       <div class="flex justify-between gap-x-8 section__wrapper">
-        <ShortSectionTile imageSrc='images/landing/mini-ostrow-tumski.png' title="Ostrów Tumski" />
-        <ShortSectionTile imageSrc="images/landing/mini-stare-miasto.png" title="Stare Miasto w Poznaniu" />
+        <ShortSectionTile
+          imageSrc="images/landing/mini-ostrow-tumski.png"
+          title="Ostrów Tumski"
+        />
+        <ShortSectionTile
+          imageSrc="images/landing/mini-stare-miasto.png"
+          title="Stare Miasto w Poznaniu"
+        />
         <ShortSectionTile imageSrc="" title="" defaultTile />
         <ShortSectionTile imageSrc="" title="" defaultTile />
       </div>
