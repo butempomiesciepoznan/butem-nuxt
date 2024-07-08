@@ -42,6 +42,12 @@ const config = useRuntimeConfig()
         <ShortSectionTile imageSrc="" title="" defaultTile />
       </div>
     </section>
+
+    <section>
+    <div>
+    <Slider :slides="slides" />
+    </div>
+    </section>
   </UContainer>
 </template>
 
