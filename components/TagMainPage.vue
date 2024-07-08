@@ -26,14 +26,14 @@ const props = defineProps({
 .tag-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
   justify-content: center;
   align-items: center;
+  gap: 8px;
   margin: 25px 0;
 }
 .v-chip {
-  background-color: #ebebeb;
-  color: #48464c;
+  background-color: var(--light-grey-background);
+  color: var(--grey-tag);
   max-height: 24px;
 }
 </style>
