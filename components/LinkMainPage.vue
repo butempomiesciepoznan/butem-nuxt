@@ -1,11 +1,18 @@
 <script setup>
 const props = defineProps({
-  city: String,
+  cityName: String,
 });
 </script>
 
 <template>
-  <h2>{{ city }}</h2>
+  <div class="container">
+    <v-icon icon="mdi-arrow-left" />
+    <h2>{{ cityName }}</h2>
+  </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.container {
+  display: flex;
+}
+</style>

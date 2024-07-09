@@ -17,6 +17,7 @@ const config = useRuntimeConfig();
   </div>
 
   <UContainer>
+    <LinkMainPage cityName="Poznań" />
     <section>
       <h2 class="w-full mt-32 mb-16 font-bold text-4xl">Zwiedzaj miasto</h2>
       <div class="flex justify-between gap-x-8 section__wrapper">
