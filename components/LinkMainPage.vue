@@ -6,7 +6,9 @@ const props = defineProps({
 
 <template>
   <div class="container">
-    <v-icon icon="mdi-arrow-left" />
+    <router-link to="/">
+      <v-icon icon="mdi-arrow-left" />
+    </router-link>
     <h2 v-cloak class="heading">{{ cityName }}</h2>
   </div>
 </template>
