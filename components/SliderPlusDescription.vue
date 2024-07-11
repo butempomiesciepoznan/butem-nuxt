@@ -1,9 +1,29 @@
+
+<script setup>
+import { defineProps } from 'vue';
+
+  const props = defineProps({
+    slides: {
+      type: Array,
+      required: true,
+    },
+  })
+
+  const { slides } = props
+
+
+</script>
+
+
+
 <template>
   <v-carousel>
     <v-carousel-item
       v-for="(slide, index) in slides"
       :key="index"
-      :src="item.src"
+      :src="slide.src"
+      :alt="slide.alt"
+      :height = "370"
       cover
     >
       <div class="caption">
@@ -14,23 +34,12 @@
   </v-carousel>
 </template>
 
-<script>
-export default {
-  props: {
-    slides: {
-      type: Array,
-      required: true,
-      
-    },
-  },
-};
-</script>
 
-<style scoped>
+<style>
 .caption {
   position: absolute;
   bottom: 20px;
-  left: 20px;
+  left: 50%;
   background: rgba(0, 0, 0, 0.5);
   color: white;
   padding: 10px;

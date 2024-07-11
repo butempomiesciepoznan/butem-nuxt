@@ -70,11 +70,6 @@ const config = useRuntimeConfig();
       </div>
     </section>
 
-    <section>
-    <div>
-    <Slider :slides="slides" />
-    </div>
-    </section>
 
   </UContainer>
 </template>
