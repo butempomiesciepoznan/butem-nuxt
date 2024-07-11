@@ -6,9 +6,9 @@ const props = defineProps({
 
 <template>
   <div class="container">
-    <router-link to="/">
+    <NuxtLink to="/">
       <v-icon icon="mdi-arrow-left" />
-    </router-link>
+    </NuxtLink>
     <h2 v-cloak class="heading">{{ cityName }}</h2>
   </div>
 </template>
