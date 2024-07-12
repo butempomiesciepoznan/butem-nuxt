@@ -42,4 +42,8 @@ const tab = ref("one");
 .v-tab.v-tab.v-btn {
   min-width: 120px;
 }
+
+.v-slide-group {
+  border-bottom: solid 1px var(--darken-grey);
+}
 </style>
