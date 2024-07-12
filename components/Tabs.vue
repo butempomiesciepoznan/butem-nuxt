@@ -34,7 +34,7 @@ const tab = ref("one");
 .v-tab {
   font-size: 1rem;
   text-transform: capitalize;
-  color: var(--darken-grey);
+  color: var(--darken-grey-disactive-btn);
   letter-spacing: var(--button-letter-spacing);
   line-height: var(--button-line-height);
 }
@@ -42,6 +42,11 @@ const tab = ref("one");
 .v-tab.v-tab.v-btn {
   width: 120px;
   min-width: 70px;
+}
+
+.v-tab-item--selected {
+  color: var(--black-color);
+  background-color: var(--darken-grey-active-btn);
 }
 
 .v-slide-group {

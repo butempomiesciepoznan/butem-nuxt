@@ -15,4 +15,8 @@ const { description } = props;
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.v-card {
+  margin: 20px auto;
+}
+</style>
