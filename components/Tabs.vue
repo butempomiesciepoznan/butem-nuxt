@@ -4,7 +4,7 @@ const tab = ref("one");
 
 <template>
   <v-card>
-    <v-tabs v-model="tab">
+    <v-tabs v-model="tab" align-tabs="center" show-arrows>
       <v-tab value="description">Opis</v-tab>
       <v-tab value="map">Mapa</v-tab>
       <v-tab value="routes">Trasy</v-tab>
@@ -40,7 +40,8 @@ const tab = ref("one");
 }
 
 .v-tab.v-tab.v-btn {
-  min-width: 120px;
+  width: 120px;
+  min-width: 70px;
 }
 
 .v-slide-group {
