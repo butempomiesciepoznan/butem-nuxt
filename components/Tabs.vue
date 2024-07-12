@@ -40,8 +40,7 @@ const tab = ref("one");
 }
 
 .v-tab.v-tab.v-btn {
-  width: 120px;
-  min-width: 70px;
+  min-width: 120px;
 }
 
 .v-tab-item--selected {
