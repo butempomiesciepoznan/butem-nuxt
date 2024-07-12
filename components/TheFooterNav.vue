@@ -6,7 +6,7 @@ const filteredItems = items.value.filter(el => el.name !== "Strona główna")
 </script>
 
 <template>
-  <nav v-cloak class="w-screen -mx-16 px-16 py-6 ">
+  <nav v-cloak class="w-screen sm:-mx-16 -mx-4 px-16 py-6 ">
     <UContainer class="flex items-center justify-between">
       <NuxtLink to="/">
         <img width="109" height="64" src="public/images/butem-logo-inversed.png" alt="Logo witryny">
