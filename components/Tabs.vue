@@ -27,7 +27,7 @@ const description =
 
 <style scoped>
 .v-card {
-  margin: 20px auto;
+  margin: 16px auto;
   box-shadow: none;
 }
 
@@ -53,7 +53,7 @@ const description =
 }
 
 .v-tabs-window-item {
-  margin: 20px;
+  margin: 20px 0;
 }
 
 .button-section {
