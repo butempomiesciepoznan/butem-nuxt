@@ -1,5 +1,7 @@
 <script setup>
-const tab = ref("one");
+const tab = ref("description"); //Initiate a tab with "description" as the default
+const description =
+  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore encididunt consequat. Ation ullamco laboris nisi ut aliquip ex ea commodo consequat.... "; //TO DO exchanged with data from the backend
 </script>
 
 <template>
@@ -13,7 +15,7 @@ const tab = ref("one");
     <v-card-text>
       <v-tabs-window v-model="tab">
         <v-tabs-window-item value="description">
-          <TabDescription description="opis testowy" />
+          <TabDescription :description="description" />
         </v-tabs-window-item>
         <v-tabs-window-item value="map"> Mapa </v-tabs-window-item>
         <v-tabs-window-item value="routes"> Trasy </v-tabs-window-item>
