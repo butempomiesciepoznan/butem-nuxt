@@ -1,5 +1,5 @@
 <script setup>
-const tab = ref("description"); //Initiate a tab with "description" as the default
+const tab = ref("null"); //Initiate a tab with "description" as the default
 const description =
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore encididunt consequat. Ation ullamco laboris nisi ut aliquip ex ea commodo consequat.... "; //TO DO exchanged with data from the backend
 </script>
@@ -50,10 +50,6 @@ const description =
 .v-tab-item--selected {
   color: var(--black-color);
   background-color: var(--darken-grey-active-btn);
-}
-
-.v-slide-group {
-  border-bottom: solid 1px var(--darken-grey);
 }
 
 .v-tabs-window-item {
