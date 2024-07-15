@@ -15,6 +15,9 @@ const description =
     <v-tabs-window v-model="tab">
       <v-tabs-window-item value="description">
         <TabDescription :description="description" />
+        <div class="button-section">
+          <ButtonPlusMore />
+        </div>
       </v-tabs-window-item>
       <v-tabs-window-item value="map"> Mapa </v-tabs-window-item>
       <v-tabs-window-item value="routes"> Trasy </v-tabs-window-item>
@@ -54,5 +57,10 @@ const description =
 
 .v-tabs-window-item {
   margin: 20px;
+}
+
+.button-section {
+  display: flex;
+  justify-content: flex-end;
 }
 </style>
