@@ -12,15 +12,13 @@ const description =
       <v-tab value="routes">Trasy</v-tab>
     </v-tabs>
 
-    <v-card-text>
-      <v-tabs-window v-model="tab">
-        <v-tabs-window-item value="description">
-          <TabDescription :description="description" />
-        </v-tabs-window-item>
-        <v-tabs-window-item value="map"> Mapa </v-tabs-window-item>
-        <v-tabs-window-item value="routes"> Trasy </v-tabs-window-item>
-      </v-tabs-window>
-    </v-card-text>
+    <v-tabs-window v-model="tab">
+      <v-tabs-window-item value="description">
+        <TabDescription :description="description" />
+      </v-tabs-window-item>
+      <v-tabs-window-item value="map"> Mapa </v-tabs-window-item>
+      <v-tabs-window-item value="routes"> Trasy </v-tabs-window-item>
+    </v-tabs-window>
   </v-card>
 </template>
 
@@ -37,8 +35,8 @@ const description =
   font-size: 1rem;
   text-transform: capitalize;
   color: var(--darken-grey-disactive-btn);
-  letter-spacing: var(--button-letter-spacing);
-  line-height: var(--button-line-height);
+  letter-spacing: var(--tab-title-letter-spacing);
+  line-height: var(--tab-title-line-height);
 }
 
 .v-tab.v-tab.v-btn {
@@ -52,5 +50,9 @@ const description =
 
 .v-slide-group {
   border-bottom: solid 1px var(--darken-grey);
+}
+
+.v-tabs-window-item {
+  margin: 20px;
 }
 </style>
