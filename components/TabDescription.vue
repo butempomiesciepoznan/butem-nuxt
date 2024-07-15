@@ -10,9 +10,11 @@ const { description } = props;
 </script>
 
 <template>
-  <div>
-    <p>{{ description }}</p>
-  </div>
+  <v-card>
+    <v-card-text>
+      <p>{{ description }}</p>
+    </v-card-text>
+  </v-card>
 </template>
 
 <style scoped>
