@@ -28,6 +28,7 @@ const description =
 <style scoped>
 .v-card {
   margin: 20px auto;
+  box-shadow: none;
 }
 
 .v-tabs {
