@@ -1,15 +1,37 @@
 <script setup>
-let isShorter = ref(true)
+import { ref } from "vue";
 
-const toggleText = () => isShorter.value = !isShorter.value
+let isShorter = ref(true);
+
+const emit = defineEmits(["increase-text", "decrease-text"]);
+const toggleText = () => {
+  isShorter.value = !isShorter.value;
+  emitEvents();
+};
+
+const emitEvents = () => {
+  isShorter.value ? emit("decrease-text") : emit("increase-text");
+};
 </script>
 
 <template>
   <v-btn-toggle class="flex items-center justify-center">
-    <v-btn v-show="isShorter" class="text-lowercase" variant="text" prepend-icon="mdi-plus" @click="toggleText">
+    <v-btn
+      v-show="isShorter"
+      class="text-lowercase"
+      variant="text"
+      prepend-icon="mdi-plus"
+      @click="toggleText"
+    >
       więcej
     </v-btn>
-    <v-btn v-show="!isShorter" class="text-lowercase" variant="text" prepend-icon="mdi-minus" @click="toggleText">
+    <v-btn
+      v-show="!isShorter"
+      class="text-lowercase"
+      variant="text"
+      prepend-icon="mdi-minus"
+      @click="toggleText"
+    >
       mniej
     </v-btn>
   </v-btn-toggle>

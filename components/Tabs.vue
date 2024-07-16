@@ -1,7 +1,31 @@
 <script setup>
-const tab = ref("null"); //Initiate a tab with "description" as the default
-const description =
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore encididunt consequat. Ation ullamco laboris nisi ut aliquip ex ea commodo consequat.... "; //TO DO exchanged with data from the backend
+// Tab initialisation
+const tab = ref("null");
+
+// Description (can be changed to data from the backend)
+const description = ref(
+  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+);
+
+// Ref to the div element with the text
+const textContainer = ref(null);
+const textHeight = ref(120); // Initial height
+const isExpanded = ref(false);
+
+// Function to set the text height
+const setTextHeight = async () => {
+  await nextTick(); // Wait for full DOM rendering
+  if (textContainer.value) {
+    textHeight.value = isExpanded.value
+      ? textContainer.value.scrollHeight // Set to full height
+      : 120; // Initial height
+  }
+};
+
+const toggleTextLength = () => {
+  isExpanded.value = !isExpanded.value;
+  setTextHeight();
+};
 </script>
 
 <template>
@@ -14,13 +38,26 @@ const description =
 
     <v-tabs-window v-model="tab">
       <v-tabs-window-item value="description">
-        <TabDescription :description="description" />
+        <div
+          ref="textContainer"
+          :style="{
+            height: textHeight + 'px',
+            transition: 'height 0.4s',
+            overflow: 'hidden',
+          }"
+          data-text-length
+        >
+          <TabDescription :description="description" />
+        </div>
         <div class="button-section">
-          <ButtonPlusMore />
+          <ButtonPlusMore
+            @increase-text="toggleTextLength"
+            @decrease-text="toggleTextLength"
+          />
         </div>
       </v-tabs-window-item>
-      <v-tabs-window-item value="map"> Mapa </v-tabs-window-item>
-      <v-tabs-window-item value="routes"> Trasy </v-tabs-window-item>
+      <v-tabs-window-item value="map">Mapa</v-tabs-window-item>
+      <v-tabs-window-item value="routes">Trasy</v-tabs-window-item>
     </v-tabs-window>
   </v-card>
 </template>
