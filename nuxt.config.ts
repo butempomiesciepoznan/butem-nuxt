@@ -4,20 +4,17 @@ export default defineNuxtConfig({
   ssr: true,
   nitro: {
     externals: {
-      traceOptions: { base: process.cwd() },
-    },
+      traceOptions: { base: process.cwd() }
+    }
   },
-  css: ["@/assets/css/styles.css"],
-  modules: [
-    "@nuxtjs/google-fonts",
-    "@nuxt/ui",
-    "@nuxt/image",
-    "vuetify-nuxt-module",
+  css: [
+    '@/assets/css/styles.css'
   ],
+  modules: ['@nuxtjs/google-fonts', '@nuxt/ui', '@nuxt/image', "vuetify-nuxt-module"],
   runtimeConfig: {
     public: {
-      wordpressUrl: process.env.BACKEND_URL,
-    },
+      wordpressUrl: process.env.BACKEND_URL
+    }
   },
   // routeRules: {
   //   '/**': {
@@ -28,19 +25,19 @@ export default defineNuxtConfig({
     families: {
       Roboto: {
         wght: [400, 700],
-        ital: [400, 700],
-      },
+        ital: [400, 700]
+      }
     },
-    display: "fallback",
-    subsets: "latin",
-    preload: true,
+    display: 'fallback',
+    subsets: 'latin',
+    preload: true
   },
   colorMode: {
-    preference: "light",
+    preference: 'light'
   },
   image: {
     provider: "ipx",
-    dir: "public/",
-    domains: [process.env.DOMAIN_FOR_IMAGES_URL],
-  },
-});
+    dir: 'public/',
+    domains: [process.env.DOMAIN_FOR_IMAGES_URL]
+  }
+})
