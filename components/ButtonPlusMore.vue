@@ -1,6 +1,4 @@
 <script setup>
-import { ref } from "vue";
-
 let isShorter = ref(true);
 
 const emit = defineEmits(["increase-text", "decrease-text"]);
