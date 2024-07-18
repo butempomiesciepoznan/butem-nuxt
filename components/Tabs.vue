@@ -1,6 +1,6 @@
 <script setup>
 // Tab initialisation
-const tab = ref("null");
+const tab = ref(null);
 
 // Description (can be changed to data from the backend)
 const description = ref(
