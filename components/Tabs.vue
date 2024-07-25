@@ -7,25 +7,11 @@ const description = ref("");
 description.value =
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.";
 
-// Ref to the div element with the text
 const textContainer = ref(null);
-const textHeight = ref(120); // Initial height
-const isExpanded = ref(false);
+const initialTextHeight = 120;
 
-// Function to set the text height
-const setTextHeight = async () => {
-  await nextTick(); // Wait for full DOM rendering
-  if (textContainer.value) {
-    textHeight.value = isExpanded.value
-      ? textContainer.value.scrollHeight // Set to full height
-      : 120; // Initial height
-  }
-};
+let { isExpanded, textHeight, toggleTextLength } = useTextHeightToggle(initialTextHeight, textContainer);
 
-const toggleTextLength = () => {
-  isExpanded.value = !isExpanded.value;
-  setTextHeight();
-};
 </script>
 
 <template>
@@ -46,15 +32,14 @@ const toggleTextLength = () => {
             overflow: 'hidden',
           }"
           data-text-length
+          :class="isExpanded ? '' : 'ellipsis'"
         >
           <TabDescription :description="description" />
         </div>
-        <div class="button-section">
-          <ButtonPlusMore
-            @increase-text="toggleTextLength"
-            @decrease-text="toggleTextLength"
-          />
-        </div>
+        <ButtonPlusMore
+          @increase-text="toggleTextLength"
+          @decrease-text="toggleTextLength"
+        />
       </v-tabs-window-item>
       <v-tabs-window-item value="map">Mapa</v-tabs-window-item>
       <v-tabs-window-item value="routes">Trasy</v-tabs-window-item>
@@ -93,8 +78,8 @@ const toggleTextLength = () => {
   margin: 20px 0;
 }
 
-.button-section {
-  display: flex;
-  justify-content: flex-end;
+.ellipsis {
+  -webkit-line-clamp: 5; /* number of visible lines */
+  line-clamp: 5;
 }
 </style>

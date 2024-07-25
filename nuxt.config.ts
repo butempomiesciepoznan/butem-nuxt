@@ -10,7 +10,7 @@ export default defineNuxtConfig({
   css: [
     '@/assets/css/styles.css'
   ],
-  modules: ['@nuxtjs/google-fonts', '@nuxt/ui', '@nuxt/image', "vuetify-nuxt-module"],
+  modules: ['@nuxtjs/google-fonts', '@nuxt/ui', '@nuxt/image', "vuetify-nuxt-module", '@vueuse/nuxt'],
   runtimeConfig: {
     public: {
       wordpressUrl: process.env.BACKEND_URL

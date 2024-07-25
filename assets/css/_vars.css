@@ -1,4 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
 :root {
+  --font-family-main: "Roboto", sans-serif;
   --button-letter-spacing: 0.1px;
   --button-line-height: 20px;
 
