@@ -1,4 +1,10 @@
 :root {
   --button-letter-spacing: 0.1px;
   --button-line-height: 20px;
+
+  --tab-title-line-height: 1.25;
+  --tab-title-letter-spacing: 0.01em;
+  --tab-text-line-height: 1.5;
+
+  --carousel-dot-width: 16px;
 }
