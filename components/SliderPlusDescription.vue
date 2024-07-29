@@ -1,5 +1,4 @@
 <script setup>
-import { defineProps } from 'vue';
 
 const props = defineProps({
   slides: {
@@ -7,6 +6,9 @@ const props = defineProps({
     required: true,
   },
 });
+
+const { slides } = props
+
 </script>
 
 <template>
