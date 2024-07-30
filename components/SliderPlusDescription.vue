@@ -27,7 +27,6 @@ const { slides } = props
 </template>
 
 <style>
-@import '../assets/css/styles.css';
 
 .carousel-img {
   width: 100%;
