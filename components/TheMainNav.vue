@@ -1,7 +1,7 @@
 <script setup>
 const config = useRuntimeConfig()
 const { data: items, pending, error, refresh } = await useFetch(`${config.public.wordpressUrl}/main-nav`)
-const filteredItems = items.value.filter(el => el.name !== "Strona główna")
+const filteredItems = items.value?.filter(el => el.name !== "Strona główna")
 
 </script>
 

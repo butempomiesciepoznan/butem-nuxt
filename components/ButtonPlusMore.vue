@@ -13,7 +13,7 @@ const emitEvents = () => {
 </script>
 
 <template>
-  <v-btn-toggle class="flex items-center justify-center">
+  <v-btn-toggle class="w-100 flex items-center justify-end">
     <v-btn
       v-show="isShorter"
       class="text-lowercase"
