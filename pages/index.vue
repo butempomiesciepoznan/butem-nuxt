@@ -82,24 +82,23 @@ description.value =
         </div>
       </section>
 
-    <section class="mb-[80px]">
-      <h2 class="w-full mt-32 mb-16 font-bold text-4xl">Podążaj trasą</h2>
-      <div class="flex justify-between gap-x-8 section__wrapper">
-        <ShortSectionTile
-          imageSrc="images/landing/mini-ostrow-tumski.png"
-          title="Ostrów Tumski"
-        />
-        <ShortSectionTile
-          imageSrc="images/landing/mini-stare-miasto.png"
-          title="Stare Miasto w Poznaniu"
-        />
-        <ShortSectionTile imageSrc="" title="" defaultTile />
-        <ShortSectionTile imageSrc="" title="" defaultTile />
-      </div>
-    </section>
-
-
-  </UContainer>
+      <section class="mb-[80px]">
+        <h2 class="w-full mt-32 mb-16 font-bold text-4xl">Podążaj trasą</h2>
+        <div class="flex justify-between gap-x-8 section__wrapper">
+          <ShortSectionTile
+            imageSrc="images/landing/mini-ostrow-tumski.png"
+            title="Ostrów Tumski"
+          />
+          <ShortSectionTile
+            imageSrc="images/landing/mini-stare-miasto.png"
+            title="Stare Miasto w Poznaniu"
+          />
+          <ShortSectionTile imageSrc="" title="" defaultTile />
+          <ShortSectionTile imageSrc="" title="" defaultTile />
+        </div>
+      </section>
+    </UContainer>
+  </template>
 </template>
 
 <style>
