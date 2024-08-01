@@ -1,4 +1,5 @@
 <script setup>
+import { defineProps } from 'vue';
 
 const props = defineProps({
   slides: {
@@ -6,15 +7,12 @@ const props = defineProps({
     required: true,
   },
 });
-
-const { slides } = props
-
 </script>
 
 <template>
   <v-carousel>
     <v-carousel-item
-      v-for="(slide, index) in slides"
+      v-for="(slide, index) in props.slides"
       :key="index"
     >
       <img :src="slide.src" :alt="slide.alt" class="carousel-img" />
@@ -27,12 +25,11 @@ const { slides } = props
 </template>
 
 <style>
-
 .carousel-img {
   width: 100%;
   height: 370px;
   object-fit: cover;
-   background-color: var(--grey-backgroud);
+  background-color: var(--grey-background);
 }
 
 .caption {
@@ -68,5 +65,4 @@ const { slides } = props
   width: var(--carousel-dot-width);
   height: var(--carousel-dot-width);
 }
-
 </style>
