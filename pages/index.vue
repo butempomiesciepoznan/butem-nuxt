@@ -40,23 +40,23 @@ const routesTitle = 'Trasy';
   <template v-else-if="isMobile === null"></template>
 
   <template v-cloak v-else>
-    <div class="w-screen h-[430px] -mt-1 -mx-16">
+    <div class="tw-w-screen tw-h-[430px] -tw-mt-1">
       <NuxtPicture
         format="webp"
         src="images/landing/pexels-jakub-zerdzicki-19736144.jpg"
-        :imgAttrs="{ class: 'w-screen h-full image__size--full' }"
+        :imgAttrs="{ class: 'tw-w-screen tw-h-full image__size--full' }"
       />
-      <UContainer class="relative">
-        <h1 class="absolute bottom-5 left-0 header__header--one">
+      <div class="md:tw-container md:tw-mx-auto xl:tw-max-w-[1312px] tw-px-16 tw-relative">
+        <h1 class="tw-absolute tw-bottom-5 tw-left-16 header__header--one">
           Eksploruj skarby miasta
         </h1>
-      </UContainer>
+      </div>
     </div>
 
-    <UContainer>
+    <main class="md:tw-container md:tw-mx-auto xl:tw-max-w-[1312px] tw-px-16">
       <section>
-        <h2 class="w-full mt-32 mb-16 font-bold text-4xl">Zwiedzaj miasto</h2>
-        <div class="flex justify-between gap-x-8 section__wrapper">
+        <h2 class="tw-w-full tw-mt-32 tw-mb-16 tw-font-bold tw-text-4xl">Zwiedzaj miasto</h2>
+        <div class="tw-flex md:tw-flex-wrap xl:tw-flex-nowrap xl:tw-justify-between tw-gap-8 section__wrapper">
           <ShortSectionTile
             imageSrc="images/landing/mini-poznan.png"
             title="Poznań"
@@ -68,10 +68,10 @@ const routesTitle = 'Trasy';
       </section>
 
       <section>
-        <h2 class="w-full mt-32 mb-16 font-bold text-4xl">
+        <h2 class="tw-w-full tw-mt-32 tw-mb-16 tw-font-bold tw-text-4xl">
           Zobacz najpopularniejsze atrakcje
         </h2>
-        <div class="flex justify-between gap-x-8 section__wrapper">
+        <div class="tw-flex md:tw-flex-wrap xl:tw-flex-nowrap xl:tw-justify-between tw-gap-8 section__wrapper">
           <ShortSectionTile
             imageSrc="images/landing/mini-domki-budnicze.png"
             title="Domki budnicze"
@@ -91,9 +91,9 @@ const routesTitle = 'Trasy';
         </div>
       </section>
 
-      <section class="mb-[80px]">
-        <h2 class="w-full mt-32 mb-16 font-bold text-4xl">Podążaj trasą</h2>
-        <div class="flex justify-between gap-x-8 section__wrapper">
+      <section class="tw-mb-[80px]">
+        <h2 class="tw-w-full tw-mt-32 tw-mb-16 tw-font-bold tw-text-4xl">Podążaj trasą</h2>
+        <div class="tw-flex md:tw-flex-wrap xl:tw-flex-nowrap xl:tw-justify-between tw-gap-8 section__wrapper">
           <ShortSectionTile
             imageSrc="images/landing/mini-ostrow-tumski.png"
             title="Ostrów Tumski"
@@ -106,7 +106,7 @@ const routesTitle = 'Trasy';
           <ShortSectionTile imageSrc="" title="" defaultTile />
         </div>
       </section>
-    </UContainer>
+    </main>
   </template>
 </template>
 
@@ -119,7 +119,7 @@ const routesTitle = 'Trasy';
 .header__header--one {
   padding: 5px 20px;
   color: var(--white-color);
-  font-size: 56px;
+  font-size: 55px;
   font-weight: 700;
   background-color: rgba(27, 30, 46, 0.73);
   border-radius: 20px;
