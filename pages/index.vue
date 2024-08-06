@@ -6,15 +6,21 @@ let { isMobile } = useDeviceType();
 const images = ref([
   {
     src: '/img/foto1.svg',
-    alt: 'foto 1'
+    alt: 'foto 1',
+    header: 'Nazwa trasy 1',
+    description: 'Krótki opis: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et domage.'
   },
   {
     src: '/img/foto2.svg',
-    alt: 'foto 2'
+    alt: 'foto 2',
+    header: 'Nazwa trasy 2',
+    description: 'Krótki opis2: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et domage.'
   },
   {
     src: '/img/foto3.svg',
-    alt: 'foto 3'
+    alt: 'foto 3',
+    header: 'Nazwa trasy 3',
+    description: 'Krótki opis3: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et domage.'
   }
 ]);
 
@@ -22,10 +28,13 @@ const description = ref('');
 description.value =
   'Suspendisse eu ligula. Curabitur vestibulum aliquam leo. Suspendisse non nisl sit amet velit hendrerit rutrum. Morbi ac felis. Suspendisse enim turpis, dictum sed, iaculis a, condimentum nec, nisi. Aenean vulputate eleifend tellus. Suspendisse eu ligula. Curabitur vestibulum aliquam leo. Suspendisse non nisl sit amet velit hendrerit rutrum. Morbi ac felis. Suspendisse enim turpis, dictum sed, iaculis a, condimentum nec, nisi. Aenean vulputate eleifend tellus.';
 
+const routesTitle = 'Trasy';
+
 </script>
 <template>
   <template v-cloak v-if="isMobile">
     <SectionCity :images="images" :description="description"/>
+    <SectionRoutes :images="images" :name="routesTitle"/>
   </template>
 
   <template v-else-if="isMobile === null"></template>
