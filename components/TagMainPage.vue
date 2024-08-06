@@ -26,10 +26,9 @@ const props = defineProps({
 .tag-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   align-items: center;
   gap: 8px;
-  margin: 25px 0;
+  margin: 25px 0 48px;
 }
 .v-chip {
   background-color: var(--light-grey-background);

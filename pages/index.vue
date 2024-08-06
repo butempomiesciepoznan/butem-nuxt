@@ -7,21 +7,40 @@ const images = ref([
   {
     src: '/img/foto1.svg',
     alt: 'foto 1',
-    header: 'Nazwa trasy 1',
+    header: 'Nazwa 1',
     description: 'Krótki opis: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et domage.'
   },
   {
     src: '/img/foto2.svg',
     alt: 'foto 2',
-    header: 'Nazwa trasy 2',
+    header: 'Nazwa 2',
     description: 'Krótki opis2: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et domage.'
   },
   {
     src: '/img/foto3.svg',
     alt: 'foto 3',
-    header: 'Nazwa trasy 3',
+    header: 'Nazwa 3',
     description: 'Krótki opis3: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et domage.'
   }
+]);
+
+const tags = ref([
+  {
+    name: 'Tag 1 km',
+    icon: ''
+  },
+  {
+    name: 'Tag 2',
+    icon: 'mdi mdi-check'
+  },
+  {
+    name: 'Tag 3',
+    icon: 'mdi mdi-close'
+  },
+  {
+    name: 'Tag 4',
+    icon: 'mdi mdi-check'
+  },
 ]);
 
 const description = ref('');
@@ -29,12 +48,14 @@ description.value =
   'Suspendisse eu ligula. Curabitur vestibulum aliquam leo. Suspendisse non nisl sit amet velit hendrerit rutrum. Morbi ac felis. Suspendisse enim turpis, dictum sed, iaculis a, condimentum nec, nisi. Aenean vulputate eleifend tellus. Suspendisse eu ligula. Curabitur vestibulum aliquam leo. Suspendisse non nisl sit amet velit hendrerit rutrum. Morbi ac felis. Suspendisse enim turpis, dictum sed, iaculis a, condimentum nec, nisi. Aenean vulputate eleifend tellus.';
 
 const routesTitle = 'Trasy';
+const placesTitle = 'Popularne miejsca';
 
 </script>
 <template>
   <template v-cloak v-if="isMobile">
-    <SectionCity :images="images" :description="description"/>
-    <SectionRoutes :images="images" :name="routesTitle"/>
+    <SectionCity :images="images" :description="description" />
+    <SectionRoutes :images="images" :name="routesTitle" />
+    <SectionPlaces :images="images" :name="placesTitle" :tags="tags" />
   </template>
 
   <template v-else-if="isMobile === null"></template>
