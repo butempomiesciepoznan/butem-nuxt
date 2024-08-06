@@ -12,6 +12,27 @@ const initialTextHeight = 120;
 
 let { isExpanded, textHeight, toggleTextLength } = useTextHeightToggle(initialTextHeight, textContainer);
 
+const tabRoutesData = ref([
+  {
+    src: '/img/foto1.svg',
+    alt: 'foto 1',
+    header: 'Ratusz w Poznaniu',
+    href: 'https://pl.wikipedia.org/wiki/Ratusz_w_Poznaniu'
+  },
+  {
+    src: '/img/foto2.svg',
+    alt: 'foto 2',
+    header: 'Domki budnicze',
+    href: 'https://pl.wikipedia.org/wiki/Domki_budnicze_w_Poznaniu'
+  },
+  {
+    src: '/img/foto3.svg',
+    alt: 'foto 3',
+    header: 'Katedra Poznańska',
+    href: 'https://pl.wikipedia.org/wiki/Bazylika_archikatedralna_%C5%9Awi%C4%99tych_Aposto%C5%82%C3%B3w_Piotra_i_Paw%C5%82a_w_Poznaniu'
+  }
+]);
+
 </script>
 
 <template>
@@ -23,6 +44,7 @@ let { isExpanded, textHeight, toggleTextLength } = useTextHeightToggle(initialTe
     </v-tabs>
 
     <v-tabs-window v-model="tab">
+
       <v-tabs-window-item value="description">
         <div
           ref="textContainer"
@@ -41,8 +63,13 @@ let { isExpanded, textHeight, toggleTextLength } = useTextHeightToggle(initialTe
           @decrease-text="toggleTextLength"
         />
       </v-tabs-window-item>
+      
       <v-tabs-window-item value="map">Mapa</v-tabs-window-item>
-      <v-tabs-window-item value="routes">Trasy</v-tabs-window-item>
+
+      <v-tabs-window-item value="routes">
+        <TabRoutes :tabRoutes="tabRoutesData" />
+      </v-tabs-window-item>
+
     </v-tabs-window>
   </v-card>
 </template>
