@@ -20,11 +20,11 @@ let { isExpanded, textHeight, toggleTextLength } = useTextHeightToggle(initialTe
 </script>
 
 <template>
-  <div v-cloak class="pt-4 text-sm leading-6">Wybrane miasto</div>
-  <h1 v-cloak class="pb-4 font-medium text-4xl leading-[2.75rem]">Poznań</h1>
+  <div v-cloak class="tw-pt-4 tw-text-sm tw-leading-6">Wybrane miasto</div>
+  <h1 v-cloak class="tw-pb-4 tw-font-medium tw-text-4xl tw-leading-[2.75rem]">Poznań</h1>
   <CarouselWithImages :images="images" />
 
-  <p class="mt-4 text-sm leading-6" :class="isExpanded ? '' : 'ellipsis'"
+  <p class="tw-mt-4 tw-text-sm tw-leading-6" :class="isExpanded ? '' : 'ellipsis'"
       ref="textContainer"
       :style="{
         height: textHeight + 'px',

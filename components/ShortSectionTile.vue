@@ -8,14 +8,14 @@ const props = defineProps({
 </script>
 
 <template>
-  <div v-if="!props.defaultTile" class="relative h-[365px] w-full max-w-[304px] tile__wrapper">
-    <h3 class="py-6 font-bold text-3xl tile__header">{{ props.title }}</h3>
-    <NuxtPicture format="webp" :src="props.imageSrc" class="absolute top-0 right-0 left-0 bottom-0 tile__image">
+  <div v-if="!props.defaultTile" class="tw-relative tw-h-[365px] tw-w-full tw-max-w-[304px] tile__wrapper">
+    <h3 class="tw-py-6 tw-font-bold tw-text-3xl tile__header">{{ props.title }}</h3>
+    <NuxtPicture format="webp" :src="props.imageSrc" class="tw-absolute tw-top-0 tw-right-0 tw-left-0 tw-bottom-0 tile__image">
     </NuxtPicture>
   </div>
   <div v-else
-    class="relative flex flex-col justify-center items-center h-[365px] w-full max-w-[304px] tile__wrapper--default">
-    <h3 class="max-w-[220px] py-6 font-bold text-3xl text-center">Kolejne miasto już niebawem</h3>
+    class="tw-relative tw-flex tw-flex-col tw-justify-center tw-items-center tw-h-[365px] tw-w-full tw-max-w-[304px] tile__wrapper--default">
+    <h3 class="tw-max-w-[220px] tw-py-6 tw-font-bold tw-text-3xl tw-text-center">Kolejne miasto już niebawem</h3>
     <NuxtPicture format="webp" src="images/landing/klepsydra.png"></NuxtPicture>
   </div>
 </template>
@@ -59,7 +59,10 @@ const props = defineProps({
 
 .tile__image {
   img {
+    width: 100%;
     height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
   }
 }
 </style>
