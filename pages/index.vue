@@ -8,19 +8,21 @@ const images = ref([
     src: '/img/foto1.svg',
     alt: 'foto 1',
     header: 'Nazwa 1',
-    description: 'Krótki opis: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et domage.'
+    description: 'Krótki opis: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et domage.',
+    href: '/miejsca/domki-budnicze'
   },
   {
     src: '/img/foto2.svg',
     alt: 'foto 2',
     header: 'Nazwa 2',
-    description: 'Krótki opis2: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et domage.'
+    description: 'Krótki opis2: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et domage.',
+    href: '/miejsca/katedra-poznanska'
   },
   {
     src: '/img/foto3.svg',
     alt: 'foto 3',
     header: 'Nazwa 3',
-    description: 'Krótki opis3: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et domage.'
+    description: 'Krótki opis3: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et domage.',href: '/miejsca/ratusz-poznanski'
   }
 ]);
 

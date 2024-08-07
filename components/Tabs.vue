@@ -2,6 +2,15 @@
 // Tab initialisation
 const tab = ref(null);
 
+const props = defineProps({
+  placeUrl: {
+    type: String,
+    required: true
+  }
+});
+
+const { placeUrl } = props;
+
 // Description (can be changed to data from the backend)
 const description = ref("");
 description.value =
@@ -32,6 +41,30 @@ const tabRoutesData = ref([
     href: 'https://pl.wikipedia.org/wiki/Bazylika_archikatedralna_%C5%9Awi%C4%99tych_Aposto%C5%82%C3%B3w_Piotra_i_Paw%C5%82a_w_Poznaniu'
   }
 ]);
+
+const tabMapsData = ref([
+  {
+    placeUrl: 'domki-budnicze',
+    street: 'Stary Rynek',
+    zipCode: '61-772',
+    city: 'Poznań',
+    iframeSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2433.9204758052383!2d16.93148301183113!3d52.40811747191544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47045b38f4dbaaa9%3A0x24a79a9fe2a3e993!2sDomki%20budnicze!5e0!3m2!1spl!2spl!4v1723035468474!5m2!1spl!2spl'
+  },
+  {
+    placeUrl: 'katedra-poznanska',
+    street: 'Ostrów Tumski 17',
+    zipCode: '61-109',
+    city: 'Poznań',
+    iframeSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2433.7408250438693!2d16.945954311831397!3d52.41137327191619!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47045b697acef619%3A0xc5f72858c17a722b!2sBazylika%20Archikatedralna%20%C5%9Bw.%20Aposto%C5%82%C3%B3w%20Piotra%20i%20Paw%C5%82a!5e0!3m2!1spl!2spl!4v1723036135008!5m2!1spl!2spl'
+  },
+  {
+    placeUrl: 'ratusz-poznanski',
+    street: 'Stary Rynek 25',
+    zipCode: '61-772',
+    city: 'Poznań',
+    iframeSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2433.896814077305!2d16.929276552085444!3d52.4085463001395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47045bb29ba4727d%3A0x6debfca6aaeccb8b!2sRatusz!5e0!3m2!1spl!2spl!4v1723036177382!5m2!1spl!2spl'
+  }
+])
 
 </script>
 
@@ -64,7 +97,9 @@ const tabRoutesData = ref([
         />
       </v-tabs-window-item>
       
-      <v-tabs-window-item value="map">Mapa</v-tabs-window-item>
+      <v-tabs-window-item value="map">
+        <TabMaps :tabMaps="tabMapsData" :placeUrl="placeUrl" />
+      </v-tabs-window-item>
 
       <v-tabs-window-item value="routes">
         <TabRoutes :tabRoutes="tabRoutesData" />

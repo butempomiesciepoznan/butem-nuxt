@@ -35,6 +35,8 @@ const { images } = props
           <p class="caption-description">{{ image.description }}</p>
         </div>
 
+        <a :href="image.href" class="tw-absolute tw-top-0 tw-bottom-0 tw-left-0 tw-right-0 z-10"></a>
+
         <div class="fake-next-slide"></div>
         
         </v-carousel-item>
