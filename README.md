@@ -1,7 +1,8 @@
 # A front part of Butem po mieście project, build on [Nuxt 3](https://nuxt.com/) with:
-- [Nuxt UI](https://ui.nuxt.com/),
 - [Nuxt Image](https://image.nuxt.com/),
-- [Nuxt TailwindCSS](https://tailwindcss.nuxtjs.org/).
+- [Nuxt TailwindCSS](https://tailwindcss.nuxtjs.org/),
+- [Vuetify - Nuxt module](https://nuxt.com/modules/vuetify-nuxt-module),
+- [VueUse - Nuxtmodule](https://nuxt.com/modules/vueuse).
 
 
 ## Setup

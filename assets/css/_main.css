@@ -1,5 +1,5 @@
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: var(--font-family-main);
   font-size: 16px;
   overflow-x: hidden;
 }
@@ -10,4 +10,13 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+.ellipsis {
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* number of visible lines */
+  line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

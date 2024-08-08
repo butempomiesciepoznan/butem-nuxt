@@ -13,7 +13,7 @@ if (route.params.slug) {
   slug.value = 'strona-glowna'
 }
 
-const { data: pages, pending, error, refresh } = await useFetch(`${config.public.wordpressUrl}/pages`,
+const { data: pages, refresh } = await useFetch(`${config.public.wordpressUrl}/pages`,
   {
     query: { slug: slug.value }
   }
@@ -21,9 +21,7 @@ const { data: pages, pending, error, refresh } = await useFetch(`${config.public
 
 </script>
 <template>
-  <UContainer>
-    <div v-for="page in pages" :key="page.slug">
-      <Header :title="page.title.rendered" :content="page.content.rendered" />
-    </div>
-  </UContainer>
+  <div v-for="page in pages" :key="page.slug" class="md:tw-container md:tw-mx-auto xl:tw-max-w-[1312px] tw-px-16 tw-mt-40">
+    <Header :title="page.title.rendered" :content="page.content.rendered" />
+  </div>
 </template>

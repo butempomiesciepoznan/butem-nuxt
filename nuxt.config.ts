@@ -7,10 +7,22 @@ export default defineNuxtConfig({
       traceOptions: { base: process.cwd() }
     }
   },
+  tailwindcss: { 
+    config: {
+      prefix: 'tw-',
+    },  
+  },
   css: [
     '@/assets/css/styles.css'
   ],
-  modules: ['@nuxtjs/google-fonts', '@nuxt/ui', '@nuxt/image', "vuetify-nuxt-module"],
+  modules: [
+    '@nuxtjs/tailwindcss',
+    '@nuxtjs/google-fonts',
+    '@nuxt/image',
+    "vuetify-nuxt-module",
+    '@vueuse/nuxt'
+  ],
+
   runtimeConfig: {
     public: {
       wordpressUrl: process.env.BACKEND_URL
@@ -39,5 +51,6 @@ export default defineNuxtConfig({
     provider: "ipx",
     dir: 'public/',
     domains: [process.env.DOMAIN_FOR_IMAGES_URL]
-  }
+  },
+  compatibilityDate: '2024-08-04'
 })

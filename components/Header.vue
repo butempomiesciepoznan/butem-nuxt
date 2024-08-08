@@ -6,7 +6,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <h2 v-cloak class="py-6 font-bold text-3xl">{{ title }}</h2>
+  <h2 v-cloak class="tw-py-6 tw-font-bold tw-text-3xl">{{ title }}</h2>
   <p v-cloak>{{ content }}</p>
 </template>
 
