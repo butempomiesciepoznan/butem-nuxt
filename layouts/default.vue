@@ -9,8 +9,6 @@ let { isMobile } = useDeviceType()
       <slot />
     </template>
 
-    <template v-else-if="isMobile === null"></template>
-
     <template v-cloak v-else>
       <TheMainNav />
         <slot />
