@@ -6,10 +6,10 @@ const props = defineProps({
 
 <template>
   <div class="container">
-    <NuxtLink to="/">
+    <NuxtLink to="/" class="tw-flex tw-items-center">
       <v-icon icon="mdi-arrow-left" />
+      <h2 v-cloak class="heading">{{ cityName }}</h2>
     </NuxtLink>
-    <h2 v-cloak class="heading">{{ cityName }}</h2>
   </div>
 </template>
 
