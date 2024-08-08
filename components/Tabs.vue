@@ -111,7 +111,7 @@ const tabMapsData = ref([
 
 <style scoped>
 .v-card {
-  margin: 16px auto;
+  margin: 32px auto;
   box-shadow: none;
 }
 

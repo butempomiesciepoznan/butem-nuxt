@@ -9,23 +9,42 @@ const images = ref([
   {
     src: '/img/foto1.svg',
     alt: 'foto 1',
-    header: 'Nazwa 1',
+    header: 'Domki budnicze',
     description: 'Krótki opis: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et domage.',
     href: '/miejsca/domki-budnicze'
   },
   {
     src: '/img/foto2.svg',
     alt: 'foto 2',
-    header: 'Nazwa 2',
+    header: 'Katedra poznańska',
     description: 'Krótki opis2: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et domage.',
     href: '/miejsca/katedra-poznanska'
   },
   {
     src: '/img/foto3.svg',
     alt: 'foto 3',
-    header: 'Nazwa 3',
+    header: 'Ratusz poznański',
     description: 'Krótki opis3: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et domage.',href: '/miejsca/ratusz-poznanski'
   }
+]);
+
+const tags = ref([
+  {
+    name: 'Wejście płatne',
+    icon: 'mdi-credit-card-outline'
+  },
+  {
+    name: 'Wózki',
+    icon: 'mdi mdi-baby-carriage-off'
+  },
+  {
+    name: 'Toalety',
+    icon: 'mdi mdi-toilet'
+  },
+  {
+    name: 'Tag 4',
+    icon: 'mdi mdi-check'
+  },
 ]);
 
 const cityName = 'Poznań';
@@ -43,6 +62,8 @@ if (route.params.placeName.length > 0) {
   <template v-cloak v-if="isMobile">
     <LinkMainPage :cityName="cityName" />
     <CarouselWithImages :images="images" />
+    <SubheadingDynamic :placeUrl="route.params.placeName" :images="images" />
+    <TagPopularPlace :tags="tags" />
     <Tabs :placeUrl="route.params.placeName" />
   </template>
 
