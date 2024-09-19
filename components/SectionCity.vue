@@ -1,5 +1,9 @@
 <script setup>
 const props = defineProps({
+  cityName: {
+    type: String,
+    required: true
+  },
   images: {
     type: Array,
     required: true
@@ -10,7 +14,7 @@ const props = defineProps({
   },
 });
 
-const { description, images } = props;
+const { cityName, description, images } = props;
 
 const textContainer = ref(null);
 const initialTextHeight = 100;
@@ -21,23 +25,17 @@ let { isExpanded, textHeight, toggleTextLength } = useTextHeightToggle(initialTe
 
 <template>
   <div v-cloak class="tw-pt-4 tw-text-sm tw-leading-6">Wybrane miasto</div>
-  <h1 v-cloak class="tw-pb-4 tw-font-medium tw-text-4xl tw-leading-[2.75rem]">Poznań</h1>
+  <h1 v-cloak class="tw-pb-4 tw-font-medium tw-text-4xl tw-leading-[2.75rem]">{{ cityName }}</h1>
   <CarouselWithImages :images="images" />
 
-  <p class="tw-mt-4 tw-text-sm tw-leading-6" :class="isExpanded ? '' : 'ellipsis'"
-      ref="textContainer"
-      :style="{
-        height: textHeight + 'px',
-        transition: 'height 0.4s',
-        overflow: 'hidden',
-      }"
-  >
+  <p class="tw-mt-4 tw-text-sm tw-leading-6" :class="isExpanded ? '' : 'ellipsis'" ref="textContainer" :style="{
+    height: textHeight + 'px',
+    transition: 'height 0.4s',
+    overflow: 'hidden',
+  }">
     {{ description }}
   </p>
 
-  <ButtonPlusMore
-    @increase-text="toggleTextLength"
-    @decrease-text="toggleTextLength"
-  />
+  <ButtonPlusMore @increase-text="toggleTextLength" @decrease-text="toggleTextLength" />
 
 </template>

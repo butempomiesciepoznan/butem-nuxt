@@ -2,6 +2,12 @@
 const route = useRoute();
 const config = useRuntimeConfig();
 let { isMobile } = useDeviceType();
+const slug = ref('');
+const cityName = ref('');
+const description = ref('');
+const cityImagesData = ref([]);
+
+const cityImages = ref([]);
 
 const images = ref([
   {
@@ -22,7 +28,7 @@ const images = ref([
     src: '/img/foto3.svg',
     alt: 'foto 3',
     header: 'Nazwa 3',
-    description: 'Krótki opis3: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et domage.',href: '/miejsca/ratusz-poznanski'
+    description: 'Krótki opis3: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et domage.', href: '/miejsca/ratusz-poznanski'
   }
 ]);
 
@@ -45,9 +51,22 @@ const tags = ref([
   },
 ]);
 
-const description = ref('');
-description.value =
-  'Suspendisse eu ligula. Curabitur vestibulum aliquam leo. Suspendisse non nisl sit amet velit hendrerit rutrum. Morbi ac felis. Suspendisse enim turpis, dictum sed, iaculis a, condimentum nec, nisi. Aenean vulputate eleifend tellus. Suspendisse eu ligula. Curabitur vestibulum aliquam leo. Suspendisse non nisl sit amet velit hendrerit rutrum. Morbi ac felis. Suspendisse enim turpis, dictum sed, iaculis a, condimentum nec, nisi. Aenean vulputate eleifend tellus.';
+slug.value = 'poznan';
+
+const { data } = await useFetch(`${config.public.backendUrl}/miasta`, {
+  query: { slug: slug.value }
+})
+
+cityName.value = data?.value[0].nazwa_miasta;
+description.value = data?.value[0].opis_miasta;
+cityImagesData.value = data?.value[0].galeria_zdjec;
+
+for (let cityImageData of cityImagesData.value) {
+  cityImages.value.push({
+    src: cityImageData.guid,
+    alt: cityImageData.alt || 'Widok miasta'
+  })
+}
 
 const routesTitle = 'Trasy';
 const placesTitle = 'Popularne miejsca';
@@ -55,7 +74,7 @@ const placesTitle = 'Popularne miejsca';
 </script>
 <template>
   <template v-cloak v-if="isMobile">
-    <SectionCity :images="images" :description="description" />
+    <SectionCity :cityName="cityName" :images="cityImages" :description="description" />
     <SectionRoutes :images="images" :name="routesTitle" />
     <SectionPlaces :images="images" :name="placesTitle" :tags="tags" />
   </template>
@@ -64,11 +83,8 @@ const placesTitle = 'Popularne miejsca';
 
   <template v-cloak v-else>
     <div class="tw-w-screen tw-h-[430px] -tw-mt-1">
-      <NuxtPicture
-        format="webp"
-        src="images/landing/pexels-jakub-zerdzicki-19736144.jpg"
-        :imgAttrs="{ class: 'tw-w-screen tw-h-full image__size--full' }"
-      />
+      <NuxtPicture format="webp" src="images/landing/pexels-jakub-zerdzicki-19736144.jpg"
+        :imgAttrs="{ class: 'tw-w-screen tw-h-full image__size--full' }" />
       <div class="md:tw-container md:tw-mx-auto xl:tw-max-w-[1312px] tw-px-16 tw-relative">
         <h1 class="tw-absolute tw-bottom-5 tw-left-16 header__header--one">
           Eksploruj skarby miasta
@@ -80,10 +96,7 @@ const placesTitle = 'Popularne miejsca';
       <section>
         <h2 class="tw-w-full tw-mt-32 tw-mb-16 tw-font-bold tw-text-4xl">Zwiedzaj miasto</h2>
         <div class="tw-flex md:tw-flex-wrap xl:tw-flex-nowrap xl:tw-justify-between tw-gap-8 section__wrapper">
-          <ShortSectionTile
-            imageSrc="images/landing/mini-poznan.png"
-            title="Poznań"
-          />
+          <ShortSectionTile imageSrc="images/landing/mini-poznan.png" title="Poznań" />
           <ShortSectionTile imageSrc="" title="" defaultTile />
           <ShortSectionTile imageSrc="" title="" defaultTile />
           <ShortSectionTile imageSrc="" title="" defaultTile />
@@ -95,36 +108,19 @@ const placesTitle = 'Popularne miejsca';
           Zobacz najpopularniejsze atrakcje
         </h2>
         <div class="tw-flex md:tw-flex-wrap xl:tw-flex-nowrap xl:tw-justify-between tw-gap-8 section__wrapper">
-          <ShortSectionTile
-            imageSrc="images/landing/mini-domki-budnicze.png"
-            title="Domki budnicze"
-          />
-          <ShortSectionTile
-            imageSrc="images/landing/mini-ratusz-poznanski.png"
-            title="Ratusz Poznański"
-          />
-          <ShortSectionTile
-            imageSrc="images/landing/mini-katedra-poznanska.png"
-            title="Katedra Poznańska"
-          />
-          <ShortSectionTile
-            imageSrc="images/landing/mini-kantor-antoniego.png"
-            title="Kantor Antoniego Krzyżanowskiego"
-          />
+          <ShortSectionTile imageSrc="images/landing/mini-domki-budnicze.png" title="Domki budnicze" />
+          <ShortSectionTile imageSrc="images/landing/mini-ratusz-poznanski.png" title="Ratusz Poznański" />
+          <ShortSectionTile imageSrc="images/landing/mini-katedra-poznanska.png" title="Katedra Poznańska" />
+          <ShortSectionTile imageSrc="images/landing/mini-kantor-antoniego.png"
+            title="Kantor Antoniego Krzyżanowskiego" />
         </div>
       </section>
 
       <section class="tw-mb-[80px]">
         <h2 class="tw-w-full tw-mt-32 tw-mb-16 tw-font-bold tw-text-4xl">Podążaj trasą</h2>
         <div class="tw-flex md:tw-flex-wrap xl:tw-flex-nowrap xl:tw-justify-between tw-gap-8 section__wrapper">
-          <ShortSectionTile
-            imageSrc="images/landing/mini-ostrow-tumski.png"
-            title="Ostrów Tumski"
-          />
-          <ShortSectionTile
-            imageSrc="images/landing/mini-stare-miasto.png"
-            title="Stare Miasto w Poznaniu"
-          />
+          <ShortSectionTile imageSrc="images/landing/mini-ostrow-tumski.png" title="Ostrów Tumski" />
+          <ShortSectionTile imageSrc="images/landing/mini-stare-miasto.png" title="Stare Miasto w Poznaniu" />
           <ShortSectionTile imageSrc="" title="" defaultTile />
           <ShortSectionTile imageSrc="" title="" defaultTile />
         </div>
