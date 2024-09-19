@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  devtools: { enabled: process.env.DEVTOOLS_ENABLED },
+  devtools: { enabled: !!process.env.DEVTOOLS_ENABLED || false},
   ssr: true,
   nitro: {
     externals: {
@@ -25,7 +25,7 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
-      wordpressUrl: process.env.BACKEND_URL
+      backendUrl: process.env.NUXT_PUBLIC_BACKEND_URL
     }
   },
   // routeRules: {
